@@ -7,26 +7,28 @@ import java.util.Objects;
 public class Employer {
     private String id;
     private String name;
+    private String description;
+    private LocalDateTime createdAt;
+    private LocalDateTime updateAt;
     private String company;
     private String address;
     private String phone_number;
-    private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
 
-    public Employer(String id) {
-        this.id = id;
+    public Employer() {
     }
 
-    public Employer(String name, String company, String address, String phone_number) {
+    public Employer(String name, String description, String company, String address, String phone_number) {
         this.name = name;
+        this.description = description;
         this.company = company;
         this.address = address;
         this.phone_number = phone_number;
     }
 
-    public Employer(String id, String name, String company, String address, String phone_number, LocalDateTime createdAt, LocalDateTime updateAt) {
+    public Employer(String id, String name, String description, String company, String address, String phone_number, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.company = company;
         this.address = address;
         this.phone_number = phone_number;
@@ -50,11 +52,19 @@ public class Employer {
         this.name = name;
     }
 
-    public String getString() {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCompany() {
         return company;
     }
 
-    public void setString(String company) {
+    public void setCompany(String company) {
         this.company = company;
     }
 
@@ -108,6 +118,7 @@ public class Employer {
         return "Employer{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", company='" + company + '\'' +
                 ", address='" + address + '\'' +
                 ", phone_number='" + phone_number + '\'' +

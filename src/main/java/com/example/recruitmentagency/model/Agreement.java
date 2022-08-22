@@ -5,19 +5,22 @@ import java.util.Objects;
 
 public class Agreement {
     private String id;
+    private String name;
+    private String description;
+    private LocalDateTime createdAt;
+    private LocalDateTime updateAt;
     private Employer employer;
     private Acquirer acquirer;
     private Offer offer;
     private String commission;
     private String the_date;
-    private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
 
-    public Agreement(String id) {
-        this.id = id;
+    public Agreement() {
     }
 
-    public Agreement(Employer employer, Acquirer acquirer,Offer offer, String commission, String the_date) {
+    public Agreement(String name, String description, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date) {
+        this.name = name;
+        this.description = description;
         this.employer = employer;
         this.acquirer = acquirer;
         this.offer = offer;
@@ -25,8 +28,10 @@ public class Agreement {
         this.the_date = the_date;
     }
 
-    public Agreement(String id, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date, LocalDateTime createdAt, LocalDateTime updateAt) {
+    public Agreement(String id, String name, String description, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
+        this.name = name;
+        this.description = description;
         this.employer = employer;
         this.acquirer = acquirer;
         this.offer = offer;
@@ -36,12 +41,30 @@ public class Agreement {
         this.updateAt = updateAt;
     }
 
+   // public Agreement(String s, String description1, String acquirer1, Offer offer, String commission1, String the_date1, LocalDateTime now, LocalDateTime now1) {}
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Employer getEmployer() {
@@ -117,6 +140,7 @@ public class Agreement {
     public String toString() {
         return "Agreement{" +
                 "id='" + id + '\'' +
+                ", description='" + description + '\'' +
                 ", employer=" + employer +
                 ", acquirer=" + acquirer +
                 ", offer=" + offer +
@@ -126,4 +150,5 @@ public class Agreement {
                 ", updateAt=" + updateAt +
                 '}';
     }
+
 }

@@ -5,19 +5,22 @@ import java.util.Objects;
 
 public class Offer {
     private String id;
+    private String name;
+    private String description;
+    private LocalDateTime createdAt;
+    private LocalDateTime updateAt;
     private WorkType workType;
     private String jobTitle;
     private WorkExperience workExperience;
     private Integer rate;
     private String ProjectDescription;
-    private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
 
-    public Offer(String id) {
-        this.id = id;
+    public Offer() {
     }
 
-    public Offer(WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
+    public Offer(String name, String description, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
+        this.name = name;
+        this.description = description;
         this.workType = workType;
         this.jobTitle = jobTitle;
         this.workExperience = workExperience;
@@ -25,8 +28,10 @@ public class Offer {
         ProjectDescription = projectDescription;
     }
 
-    public Offer(String id, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription, LocalDateTime createdAt, LocalDateTime updateAt) {
+    public Offer(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
         this.id = id;
+        this.name = name;
+        this.description = description;
         this.workType = workType;
         this.jobTitle = jobTitle;
         this.workExperience = workExperience;
@@ -42,6 +47,22 @@ public class Offer {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public WorkType getWorkType() {
@@ -117,6 +138,7 @@ public class Offer {
     public String toString() {
         return "Offer{" +
                 "id='" + id + '\'' +
+                ", description='" + description + '\'' +
                 ", workType=" + workType +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", workExperience=" + workExperience +
