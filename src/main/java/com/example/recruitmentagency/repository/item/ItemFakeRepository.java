@@ -1,8 +1,6 @@
-package com.example.recruitmentagency.repository;
+package com.example.recruitmentagency.repository.item;
 
 
-import com.example.recruitmentagency.model.Acquirer;
-import com.example.recruitmentagency.model.Agreement;
 import com.example.recruitmentagency.model.Item;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +12,7 @@ import java.util.UUID;
 
 @Repository
 public class ItemFakeRepository {
+
     private LocalDateTime now = LocalDateTime.now();
     private List<Item> items = new ArrayList<>(
             Arrays.asList(
@@ -22,6 +21,19 @@ public class ItemFakeRepository {
                     new Item("3","item3"," desc3", now, now),
                     new Item("4","item4"," desc4", now, now)
             ));
+    /*
+    void * @PostContsctruct{
+        List<Item> items = new ArrayList<>(
+                Arrays.asList(
+                        new Item("1","item1"," desc1", now, now),
+                        new Item("2","item2"," desc2", now, now),
+                        new Item("3","item3"," desc3", now, now),
+                        new Item("4","item4"," desc4", now, now)
+                ));
+        return this.items;
+    }
+*/
+
 
     public List<Item> findAll(){
         return this.items;

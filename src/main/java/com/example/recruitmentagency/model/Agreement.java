@@ -1,9 +1,14 @@
 package com.example.recruitmentagency.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Document
 public class Agreement {
+    @Id
     private String id;
     private String name;
     private String description;
@@ -41,7 +46,7 @@ public class Agreement {
         this.updateAt = updateAt;
     }
 
-   // public Agreement(String s, String description1, String acquirer1, Offer offer, String commission1, String the_date1, LocalDateTime now, LocalDateTime now1) {}
+
 
     public String getId() {
         return id;
@@ -140,6 +145,7 @@ public class Agreement {
     public String toString() {
         return "Agreement{" +
                 "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", employer=" + employer +
                 ", acquirer=" + acquirer +
@@ -150,5 +156,6 @@ public class Agreement {
                 ", updateAt=" + updateAt +
                 '}';
     }
+
 
 }

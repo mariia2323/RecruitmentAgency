@@ -1,4 +1,4 @@
-package com.example.recruitmentagency.repository;
+package com.example.recruitmentagency.repository.acquirer;
 
 
 import com.example.recruitmentagency.model.*;

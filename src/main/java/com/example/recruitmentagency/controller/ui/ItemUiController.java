@@ -1,10 +1,9 @@
-/*package com.example.recruitmentagency.controller.gui;
+/*package com.example.recruitmentagency.controller.ui;
 
 
 import com.example.recruitmentagency.model.Item;
 import com.example.recruitmentagency.service.item.interfaces.IItemService;
 import com.example.recruitmentagency.forms.ItemForm;
-import com.example.recruitmentagency.model.Item;
 //import com.example.recruitmentagency.service.interfaces.IItemService;
 //import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,7 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/gui/items")
 //@AllArgsConstructor
-public class ItemGuiController {
+public class ItemUiController {
 
     private IItemService service;
 
