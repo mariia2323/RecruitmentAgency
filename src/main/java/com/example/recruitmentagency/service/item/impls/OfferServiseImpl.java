@@ -30,7 +30,7 @@ public class OfferServiseImpl implements IOfferService {
     //OfferFakeRepository repository;
     OfferMongoRepository repository;
 
-   // @PostConstruct
+    @PostConstruct
     void init() {
         repository.saveAll(offers);
     }
@@ -44,7 +44,7 @@ public class OfferServiseImpl implements IOfferService {
     @Override
     //public Offer update(Offer offer) {return repository.update(offer);}
     public Offer update(Offer offer) {
-        offer.setUpdateAt(LocalDateTime.now());
+        offer.setUpdatedAt(LocalDateTime.now());
         return repository.save(offer);
     }
 

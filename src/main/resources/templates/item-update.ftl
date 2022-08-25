@@ -6,18 +6,32 @@
   <title>Title</title>
 </head>
 <body>
-<h1>Update</h1>
-<div style="width: 60%; text-align: center">
+<h1>Update item</h1>
+
+<div>
+
   <fieldset>
-    <legend></legend>
     <form name="item" action="" method="POST">
-      name:<@spring.formInput "form.name" "" "text"/>
+      id:<@spring.formInput "form.id" "" "text" />
       <br>
-      Description:<@spring.formInput "form.description" "" "text"/>
+      name:<@spring.formInput "form.name" "" "text" />
       <br>
-      <input type="submit" value="Update"/>
+      description:<@spring.formInput "form.description" "" "text" />
+      <br>
+      created :<@spring.formInput "form.createdAt" "" "date" />
+      <br>
+      updated :<@spring.formInput "form.updatedAt" "" "date" />
+      <br>
+
+      <input type="submit" value="Save">
+
     </form>
+
   </fieldset>
+
+
+
 </div>
+
 </body>
 </html>

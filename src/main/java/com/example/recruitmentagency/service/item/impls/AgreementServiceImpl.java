@@ -2,8 +2,6 @@ package com.example.recruitmentagency.service.item.impls;
 
 
 import com.example.recruitmentagency.model.*;
-import com.example.recruitmentagency.repository.acquirer.AcquirerMongoRepository;
-import com.example.recruitmentagency.repository.agreement.AgreementFakeRepository;
 import com.example.recruitmentagency.repository.agreement.AgreementMongoRepository;
 import com.example.recruitmentagency.service.item.interfaces.IAgreementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +27,7 @@ public class AgreementServiceImpl implements IAgreementService {
     @Autowired
     //AgreementFakeRepository repository;
     AgreementMongoRepository repository;
-    //@PostConstruct
+    @PostConstruct
     void init() {
         repository.saveAll(agreements);
     }
@@ -43,7 +41,7 @@ public class AgreementServiceImpl implements IAgreementService {
     @Override
     //public Agreement update(Agreement agreement) {return repository.update(agreement);}
     public Agreement update(Agreement agreement) {
-        agreement.setUpdateAt(LocalDateTime.now());
+        agreement.setUpdatedAt(LocalDateTime.now());
         return repository.save(agreement);
     }
 

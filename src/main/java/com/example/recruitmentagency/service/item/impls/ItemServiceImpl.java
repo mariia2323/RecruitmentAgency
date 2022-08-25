@@ -29,7 +29,7 @@ public class ItemServiceImpl implements IItemService {
     //ItemFakeRepository repository;
     ItemMongoRepository repository;
 
-    //@PostConstruct
+    @PostConstruct
     void init() {
            repository.saveAll(items);
        }

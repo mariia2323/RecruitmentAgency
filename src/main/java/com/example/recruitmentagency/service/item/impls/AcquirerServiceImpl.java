@@ -2,9 +2,7 @@ package com.example.recruitmentagency.service.item.impls;
 
 
 import com.example.recruitmentagency.model.*;
-import com.example.recruitmentagency.repository.acquirer.AcquirerFakeRepository;
 import com.example.recruitmentagency.repository.acquirer.AcquirerMongoRepository;
-import com.example.recruitmentagency.repository.item.ItemMongoRepository;
 import com.example.recruitmentagency.service.item.interfaces.IAcquirerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +29,7 @@ public class AcquirerServiceImpl implements IAcquirerService {
     //AcquirerFakeRepository repository;
     AcquirerMongoRepository repository;
 
-   // @PostConstruct
+    @PostConstruct
     void init() {
         repository.saveAll(acquirers);
     }
@@ -45,7 +43,7 @@ public class AcquirerServiceImpl implements IAcquirerService {
     @Override
     //public Acquirer update(Acquirer acquirer) {return repository.update(acquirer);}
     public Acquirer update(Acquirer acquirer) {
-        acquirer.setUpdateAt(LocalDateTime.now());
+        acquirer.setUpdatedAt(LocalDateTime.now());
         return repository.save(acquirer);
     }
 

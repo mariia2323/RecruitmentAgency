@@ -32,7 +32,7 @@ public class AgreementFakeRepository {
 
     public Agreement update(Agreement agreement) {
         this.deleteById(agreement.getId());
-        agreement.setUpdateAt(LocalDateTime.now());
+        agreement.setUpdatedAt(LocalDateTime.now());
         this.agreements.add(agreement);
         return  agreement;
     }
@@ -54,7 +54,7 @@ public class AgreementFakeRepository {
     public Agreement save(Agreement agreement) {
         agreement.setId(UUID.randomUUID().toString());
         agreement.setCreatedAt(LocalDateTime.now());
-        agreement.setUpdateAt(LocalDateTime.now());
+        agreement.setUpdatedAt(LocalDateTime.now());
         this.agreements.add(agreement);
         return agreement;
     }

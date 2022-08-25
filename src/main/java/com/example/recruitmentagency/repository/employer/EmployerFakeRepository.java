@@ -34,7 +34,7 @@ public class EmployerFakeRepository {
 
     public Employer update(Employer employer) {
         this.deleteById(employer.getId());
-        employer.setUpdateAt(LocalDateTime.now());
+        employer.setUpdatedAt(LocalDateTime.now());
         this.employers.add(employer);
         return  employer;
     }
@@ -56,7 +56,7 @@ public class EmployerFakeRepository {
     public Employer save(Employer employer) {
         employer.setId(UUID.randomUUID().toString());
         employer.setCreatedAt(LocalDateTime.now());
-        employer.setUpdateAt(LocalDateTime.now());
+        employer.setUpdatedAt(LocalDateTime.now());
         this.employers.add(employer);
         return employer;
     }

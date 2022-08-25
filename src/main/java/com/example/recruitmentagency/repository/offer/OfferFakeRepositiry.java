@@ -33,7 +33,7 @@ public class OfferFakeRepositiry {
 
     public Offer update(Offer offer) {
         this.deleteById(offer.getId());
-        offer.setUpdateAt(LocalDateTime.now());
+        offer.setUpdatedAt(LocalDateTime.now());
         this.offers.add(offer);
         return offer;
     }
@@ -55,7 +55,7 @@ public class OfferFakeRepositiry {
     public Offer save(Offer offer) {
         offer.setId(UUID.randomUUID().toString());
         offer.setCreatedAt(LocalDateTime.now());
-        offer.setUpdateAt(LocalDateTime.now());
+        offer.setUpdatedAt(LocalDateTime.now());
         this.offers.add(offer);
         return offer;
     }

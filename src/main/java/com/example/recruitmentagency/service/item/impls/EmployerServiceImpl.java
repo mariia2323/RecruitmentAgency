@@ -31,7 +31,7 @@ public class EmployerServiceImpl implements IEmployerService {
     //ItemFakeRepository repository;
     EmployerMongoRepository repository;
 
-   // @PostConstruct
+    @PostConstruct
     void init() {
         repository.saveAll(employers);
     }
@@ -45,7 +45,7 @@ public class EmployerServiceImpl implements IEmployerService {
     @Override
     //public Employer update(Employer employer) {return repository.update(employer);}
     public Employer update(Employer employer) {
-        employer.setUpdateAt(LocalDateTime.now());
+        employer.setUpdatedAt(LocalDateTime.now());
         return repository.save(employer);
     }
 

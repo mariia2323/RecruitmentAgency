@@ -1,29 +1,27 @@
-package com.example.recruitmentagency.model;
+package com.example.recruitmentagency.forms;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.example.recruitmentagency.model.Acquirer;
+import com.example.recruitmentagency.model.Employer;
+import com.example.recruitmentagency.model.Offer;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Agreement {
-    @Id
+public class AgreementForm {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime updateAt;
     private Employer employer;
     private Acquirer acquirer;
     private Offer offer;
     private String commission;
     private String the_date;
 
-    public Agreement() {
+    public AgreementForm() {
     }
 
-    public Agreement(String name, String description, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date) {
+    public AgreementForm(String name, String description, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date) {
         this.name = name;
         this.description = description;
         this.employer = employer;
@@ -33,20 +31,18 @@ public class Agreement {
         this.the_date = the_date;
     }
 
-    public Agreement(String id, String name, String description, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public AgreementForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, Employer employer, Acquirer acquirer, Offer offer, String commission, String the_date) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
         this.employer = employer;
         this.acquirer = acquirer;
         this.offer = offer;
         this.commission = commission;
         this.the_date = the_date;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
-
-
 
     public String getId() {
         return id;
@@ -70,6 +66,22 @@ public class Agreement {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 
     public Employer getEmployer() {
@@ -112,50 +124,19 @@ public class Agreement {
         this.the_date = the_date;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Agreement agreement = (Agreement) o;
-        return getId().equals(agreement.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
     @Override
     public String toString() {
-        return "Agreement{" +
+        return "AgreementForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
                 ", employer=" + employer +
                 ", acquirer=" + acquirer +
                 ", offer=" + offer +
                 ", commission='" + commission + '\'' +
                 ", the_date='" + the_date + '\'' +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updatedAt +
                 '}';
     }
-
-
 }

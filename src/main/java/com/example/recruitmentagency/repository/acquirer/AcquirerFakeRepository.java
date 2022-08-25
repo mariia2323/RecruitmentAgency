@@ -32,7 +32,7 @@ public class AcquirerFakeRepository {
 
     public Acquirer update(Acquirer acquirer) {
         this.deleteById(acquirer.getId());
-        acquirer.setUpdateAt(LocalDateTime.now());
+        acquirer.setUpdatedAt(LocalDateTime.now());
         this.acquirers.add(acquirer);
         return  acquirer;
     }
@@ -54,7 +54,7 @@ public class AcquirerFakeRepository {
     public Acquirer save(Acquirer acquirer) {
         acquirer.setId(UUID.randomUUID().toString());
         acquirer.setCreatedAt(LocalDateTime.now());
-        acquirer.setUpdateAt(LocalDateTime.now());
+        acquirer.setUpdatedAt(LocalDateTime.now());
         this.acquirers.add(acquirer);
         return acquirer;
     }

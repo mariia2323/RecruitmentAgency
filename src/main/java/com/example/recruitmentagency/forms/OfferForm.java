@@ -1,29 +1,25 @@
-package com.example.recruitmentagency.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.example.recruitmentagency.forms;
+import com.example.recruitmentagency.model.WorkExperience;
+import com.example.recruitmentagency.model.WorkType;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Offer {
-    @Id
+public class OfferForm {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime updateAt;
     private WorkType workType;
     private String jobTitle;
     private WorkExperience workExperience;
     private Integer rate;
     private String ProjectDescription;
 
-    public Offer() {
+    public OfferForm() {
     }
 
-    public Offer(String name, String description, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
+    public OfferForm(String name, String description, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
         this.name = name;
         this.description = description;
         this.workType = workType;
@@ -33,17 +29,17 @@ public class Offer {
         ProjectDescription = projectDescription;
     }
 
-    public Offer(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
+    public OfferForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
         this.workType = workType;
         this.jobTitle = jobTitle;
         this.workExperience = workExperience;
         this.rate = rate;
         ProjectDescription = projectDescription;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public String getId() {
@@ -68,6 +64,22 @@ public class Offer {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 
     public WorkType getWorkType() {
@@ -110,48 +122,20 @@ public class Offer {
         ProjectDescription = projectDescription;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Offer offer = (Offer) o;
-        return getId().equals(offer.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
     @Override
     public String toString() {
-        return "Offer{" +
+        return "OfferForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
                 ", workType=" + workType +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", workExperience=" + workExperience +
                 ", rate=" + rate +
                 ", ProjectDescription='" + ProjectDescription + '\'' +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updatedAt +
                 '}';
     }
 }
+

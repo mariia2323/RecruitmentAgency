@@ -1,19 +1,17 @@
-package com.example.recruitmentagency.model;
+package com.example.recruitmentagency.forms;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.example.recruitmentagency.model.Education;
+import com.example.recruitmentagency.model.WorkExperience;
+import com.example.recruitmentagency.model.WorkType;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Acquirer {
-    @Id
+public class AcquirerForm {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime updateAt;
     private String surname;
     private String patronymic;
     private WorkExperience workExperience;
@@ -22,10 +20,10 @@ public class Acquirer {
     private String date_of_birth;
     private Education education;
 
-    public Acquirer() {
+    public AcquirerForm() {
     }
 
-    public Acquirer(String name, String description, String surname, String patronymic, WorkExperience workExperience, WorkType workType, String other_data, String date_of_birth, Education education) {
+    public AcquirerForm(String name, String description, String surname, String patronymic, WorkExperience workExperience, WorkType workType, String other_data, String date_of_birth, Education education) {
         this.name = name;
         this.description = description;
         this.surname = surname;
@@ -37,10 +35,12 @@ public class Acquirer {
         this.education = education;
     }
 
-    public Acquirer(String id, String name, String description, String surname, String patronymic, WorkExperience workExperience, WorkType workType, String other_data, String date_of_birth, Education education, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public AcquirerForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, String surname, String patronymic, WorkExperience workExperience, WorkType workType, String other_data, String date_of_birth, Education education) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
         this.surname = surname;
         this.patronymic = patronymic;
         this.workExperience = workExperience;
@@ -48,8 +48,6 @@ public class Acquirer {
         this.other_data = other_data;
         this.date_of_birth = date_of_birth;
         this.education = education;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public String getId() {
@@ -74,6 +72,22 @@ public class Acquirer {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 
     public String getSurname() {
@@ -132,41 +146,14 @@ public class Acquirer {
         this.education = education;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Acquirer acquirer = (Acquirer) o;
-        return getId().equals(acquirer.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
     @Override
     public String toString() {
-        return "Acquirer{" +
+        return "AcquirerForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", workExperience=" + workExperience +
@@ -174,8 +161,6 @@ public class Acquirer {
                 ", other_data='" + other_data + '\'' +
                 ", date_of_birth='" + date_of_birth + '\'' +
                 ", education=" + education +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updatedAt +
                 '}';
     }
 }

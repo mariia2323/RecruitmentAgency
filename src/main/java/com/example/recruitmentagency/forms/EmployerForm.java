@@ -1,27 +1,21 @@
-package com.example.recruitmentagency.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.example.recruitmentagency.forms;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Employer {
-    @Id
+public class EmployerForm {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime updateAt;
     private String company;
     private String address;
     private String phone_number;
 
-    public Employer() {
+    public EmployerForm() {
     }
 
-    public Employer(String name, String description, String company, String address, String phone_number) {
+    public EmployerForm(String name, String description, String company, String address, String phone_number) {
         this.name = name;
         this.description = description;
         this.company = company;
@@ -29,15 +23,15 @@ public class Employer {
         this.phone_number = phone_number;
     }
 
-    public Employer(String id, String name, String description, String company, String address, String phone_number, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public EmployerForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, String company, String address, String phone_number) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
         this.company = company;
         this.address = address;
         this.phone_number = phone_number;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public String getId() {
@@ -64,6 +58,22 @@ public class Employer {
         this.description = description;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
+
     public String getCompany() {
         return company;
     }
@@ -88,46 +98,17 @@ public class Employer {
         this.phone_number = phone_number;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employer employer = (Employer) o;
-        return getId().equals(employer.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
     @Override
     public String toString() {
-        return "Employer{" +
+        return "EmployerForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
                 ", company='" + company + '\'' +
                 ", address='" + address + '\'' +
                 ", phone_number='" + phone_number + '\'' +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updatedAt +
                 '}';
     }
 }
