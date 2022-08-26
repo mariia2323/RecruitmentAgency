@@ -1,10 +1,16 @@
-<style text="text/css">
-.customTable{
+<style text="text/css" >
 
-                      }
 td{
     font-size: 0.8em;
     max-width: 150px;
+    color: #8b9dac;
+}
+th{
+    color: #7d868d;
+}
+ion-icon{
+    font-size: 30px;
+    color: #ac9c8b;
 }
 .customForm{
     font-size: 1.5rem;
@@ -31,8 +37,56 @@ td{
 .titleMain{
     width: 100%;
     text-align: center;
+    color: #8b9dac;
 }
 body{
-    background-color: #A0E7E5
+    background-color: #A0E7E5;
+}
+h1{
+    text-decoration: underline;
+    text-decoration-color: #8b9dac;
+}
+#createBtn{
+    margin-left: 50px;
+}
+legend{
+    font-size: 40px;
+}
+header{
+    background-color: #FFFDFB;
+}
+body{
+    background-color: #FFFDFB;
+}
+.customTable{
+    width: 50%; text-align: center;
+}
+.customFieldset{
+    border-radius: 20px;
+    padding: 25px;
+}
+.customFieldset input{
+    border-radius: 20px;
+    width: 400px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.submitBtn{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #000000;
+    font-family: Brush Script MT;
+    font-size: 30px;
+    font-weight: 100;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: solid #99C624 2px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
 }
 </style>

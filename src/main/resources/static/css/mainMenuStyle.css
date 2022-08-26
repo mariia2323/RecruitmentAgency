@@ -1,6 +1,6 @@
 .title p{
-    color: #ffffff;
-    text-shadow: 2px 0 0 #0c0f15, 0 -2px 0 #0c0f15, 0 2px 0 #0c0f15, -2px 0 0 #0c0f15;
+    color: #ac9c8b;
+    font-size: 16px;
 }
 body {
     font-family: "Libre Baskerville", serif;
@@ -340,7 +340,7 @@ textarea, label {
     background-size: cover;
     vertical-align: middle; }
 .page-home .overlay {
-    background-color: #A0E7E5;
+    background-color: #FFFDFB;
 }
 
 /* End of container */
@@ -429,7 +429,7 @@ textarea, label {
     -o-transform-origin: center center;
     transform-origin: center center; }
 .hex-item div::before, .hex-item div::after {
-    background-color: #FFAEBC;
+    background-color: #f6dbc6;
     content: "";
     position: absolute;
     width: 100%;
@@ -591,10 +591,6 @@ textarea, label {
         opacity: 1;
     }
 }
-
-
-
-
 
 @media only screen and (max-width: 767px)
 {

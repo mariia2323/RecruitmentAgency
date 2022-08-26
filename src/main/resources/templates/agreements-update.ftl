@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Agreement Update</h1>
-<div style="width: 60%; text-align: center">
+<div style="width: 50%; text-align: center">
     <fieldset>
         <legend>Agreement update</legend>
         <form name="agreements" action="" method="POST">
