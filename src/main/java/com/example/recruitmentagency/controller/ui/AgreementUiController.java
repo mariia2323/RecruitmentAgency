@@ -38,7 +38,7 @@ public class AgreementUiController {
         model.addAttribute("form", agreementForm);
         return "agreements-create";
     }
-/*
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addAgreement(@ModelAttribute("form") AgreementForm form){
         Agreement agreement = new Agreement();
@@ -60,7 +60,7 @@ public class AgreementUiController {
         agreementForm.setId(agreementToUpdate.getId());
         agreementForm.setName(agreementToUpdate.getName());
         agreementForm.setDescription(agreementToUpdate.getDescription());
-        agreementForm.setUpdateAt(agreementToUpdate.getUpdateAt());
+        agreementForm.setUpdateAt(agreementToUpdate.getUpdatedAt());
         agreementForm.setCreatedAt(agreementToUpdate.getCreatedAt());
         agreementForm.setEmployer(agreementToUpdate.getEmployer());
         agreementForm.setAcquirer(agreementToUpdate.getAcquirer());
@@ -79,32 +79,17 @@ public class AgreementUiController {
         agreementtoUpdate.setName(form.getName());
         agreementtoUpdate.setDescription(form.getDescription());
         agreementtoUpdate.setCreatedAt(LocalDateTime.now());
-        agreementtoUpdate.setUpdateAt(LocalDateTime.now());
-        agreementtoUpdate.setName(form.getName());
-        agreementtoUpdate.setName(form.getName());
-        agreementtoUpdate.setName(form.getName());
-        agreementtoUpdate.setName(form.getName());
-        agreementtoUpdate.setName(form.getName());
+        agreementtoUpdate.setUpdatedAt(LocalDateTime.now());
+        agreementtoUpdate.setEmployer(form.getEmployer());
+        agreementtoUpdate.setAcquirer(form.getAcquirer());
+        agreementtoUpdate.setOffer(form.getOffer());
+        agreementtoUpdate.setCommission(form.getCommission());
+        agreementtoUpdate.setThe_date(form.getThe_date());
 
-        Agreement agreementToUpdate = service.get(id);
-        AgreementForm agreementForm = new AgreementForm();
-
-
-        agreementForm.setId(agreementToUpdate.getId());
-        agreementForm.setName(agreementToUpdate.getName());
-        agreementForm.setDescription(agreementToUpdate.getDescription());
-        agreementForm.setUpdateAt(agreementToUpdate.getUpdateAt());
-        agreementForm.setCreatedAt(agreementToUpdate.getCreatedAt());
-        agreementForm.setEmployer(agreementToUpdate.getEmployer());
-        agreementForm.setAcquirer(agreementToUpdate.getAcquirer());
-        agreementForm.setOffer(agreementToUpdate.getOffer());
-        agreementForm.setCommission(agreementToUpdate.getCommission());
-        agreementForm.setThe_date(agreementToUpdate.getThe_date());
         service.update(agreementtoUpdate);
 
-        return "redirect:/ui/v1/ agreements/";
+        return "redirect:/ui/v1/agreements/";
     }
-*/
 
 
 

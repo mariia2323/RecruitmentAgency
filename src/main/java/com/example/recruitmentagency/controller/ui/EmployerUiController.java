@@ -1,5 +1,6 @@
 package com.example.recruitmentagency.controller.ui;
 
+import com.example.recruitmentagency.forms.EmployerForm;
 import com.example.recruitmentagency.forms.ItemForm;
 import com.example.recruitmentagency.model.Employer;
 import com.example.recruitmentagency.model.Item;
@@ -28,53 +29,61 @@ public class EmployerUiController {
     @GetMapping("/del/{id}")
     public String deleteById(@PathVariable("id") String id) {
         service.delete(id);
-        return  "redirect:/ui/v1/items/";
+        return  "redirect:/ui/v1/employers/";
     }
-/*
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String addItem(Model model){
-        ItemForm itemForm = new ItemForm();
-        model.addAttribute("form", itemForm);
-        return "addItem";
+    public String addEmployer(Model model){
+        EmployerForm employerForm = new EmployerForm();
+        model.addAttribute("form", employerForm);
+        return "employers-create";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addItem(@ModelAttribute("form") ItemForm form){
-        Item item = new Item();
-        item.setName(form.getName());
-        item.setDescription(form.getDescription());
-        service.create(item);
-        return "redirect:/ui/v1/items/";
+    public String addEmployer(@ModelAttribute("form") EmployerForm form){
+        Employer employer = new Employer();
+        employer.setName(form.getName());
+        employer.setDescription(form.getDescription());
+        employer.setCompany(form.getCompany());
+        employer.setAddress(form.getAddress());
+        employer.setPhone_number(form.getPhone_number());
+        service.create(employer);
+        return "redirect:/ui/v1/employers/";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public String updateItem(Model model, @PathVariable("id") String id){
-        Item itemToUpdate = service.get(id);
-        ItemForm itemForm = new ItemForm();
-        itemForm.setId(itemToUpdate.getId());
-        itemForm.setName(itemToUpdate.getName());
-        itemForm.setDescription(itemToUpdate.getDescription());
-        itemForm.setUpdatedAt(itemToUpdate.getUpdatedAt());
-        itemForm.setCreatedAt(itemToUpdate.getCreatedAt());
-        model.addAttribute("form", itemForm);
-        return "updateItem";
+    public String updateEmployer(Model model, @PathVariable("id") String id){
+        Employer employerToUpdate = service.get(id);
+        EmployerForm employerForm = new EmployerForm();
+        employerForm.setId(employerToUpdate.getId());
+        employerForm.setName(employerToUpdate.getName());
+        employerForm.setDescription(employerToUpdate.getDescription());
+        employerForm.setCompany(employerToUpdate.getCompany());
+        employerForm.setAddress(employerToUpdate.getAddress());
+        employerForm.setPhone_number(employerToUpdate.getPhone_number());
+        employerForm.setUpdateAt(employerToUpdate.getUpdatedAt());
+        employerForm.setCreatedAt(employerToUpdate.getCreatedAt());
+        model.addAttribute("form", employerForm);
+        return "employers-update";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    public String updateItem( @ModelAttribute("form") ItemForm form){
+    public String updateEmployer( @ModelAttribute("form") EmployerForm form){
         System.out.println(form);
-        Item itemtoUpdate = new Item();
-        itemtoUpdate.setId(form.getId());
-        itemtoUpdate.setName(form.getName());
-        itemtoUpdate.setDescription(form.getDescription());
-        itemtoUpdate.setCreatedAt(LocalDateTime.now());
-        itemtoUpdate.setUpdatedAt(LocalDateTime.now());
+        Employer employertoUpdate = new Employer();
+        employertoUpdate.setId(form.getId());
+        employertoUpdate.setName(form.getName());
+        employertoUpdate.setDescription(form.getDescription());
+        employertoUpdate.setCompany(form.getCompany());
+        employertoUpdate.setAddress(form.getAddress());
+        employertoUpdate.setPhone_number(form.getPhone_number());
+        employertoUpdate.setCreatedAt(LocalDateTime.now());
+        employertoUpdate.setUpdatedAt(LocalDateTime.now());
+        service.update(employertoUpdate);
 
-        service.update(itemtoUpdate);
-
-        return "redirect:/ui/v1/items/";
+        return "redirect:/ui/v1/employers/";
     }
 
-*/
+
 
 }

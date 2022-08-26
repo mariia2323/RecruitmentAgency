@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Offer creation</title>
+    <#include "css/Style.css">
 </head>
+<header>
+    <a href="/ui/v1/offers/"><ion-icon name="arrow-undo-sharp"></ion-icon></a>
+</header>
 <body>
-<h1>Offer Creation</h1>
-<div style="width: 60%; text-align: center">
-    <fieldset>
-        <legend>Offer create</legend>
-        <form name="offers" action="" method="POST">
+<div class="table-center customTable">
+    <fieldset class="customFieldset">
+        <legend>Offer update</legend>
+        <form name="offers" action="" method="POST" class="customForm" >
             name:<@spring.formInput "form.name" "" "text"/>
             <br>
             Description:<@spring.formInput "form.description" "" "text"/>
@@ -25,13 +28,11 @@
             <br>
             projectDescription:<@spring.formInput "form.projectDescription" "" "text"/>
             <br>
-            name:<@spring.formInput "form.name" "" "text"/>
-            <br>
-            <input type="submit" value="Create"/>
-
+            <input class="submitBtn" type="submit" value="Create"/>
         </form>
     </fieldset>
 </div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

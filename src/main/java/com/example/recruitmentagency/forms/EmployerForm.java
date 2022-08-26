@@ -23,15 +23,16 @@ public class EmployerForm {
         this.phone_number = phone_number;
     }
 
-    public EmployerForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, String company, String address, String phone_number) {
+    public EmployerForm(String id, String name, String description, String company, String address, String phone_number, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
+
         this.company = company;
         this.address = address;
         this.phone_number = phone_number;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
     }
 
     public String getId() {
@@ -58,22 +59,6 @@ public class EmployerForm {
         this.description = description;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
-
     public String getCompany() {
         return company;
     }
@@ -97,6 +82,21 @@ public class EmployerForm {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
 
     @Override
     public String toString() {
@@ -104,11 +104,11 @@ public class EmployerForm {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updateAt +
                 ", company='" + company + '\'' +
                 ", address='" + address + '\'' +
                 ", phone_number='" + phone_number + '\'' +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
                 '}';
     }
 }

@@ -8,13 +8,14 @@ public class OfferForm {
     private String id;
     private String name;
     private String description;
-    private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
+
     private WorkType workType;
     private String jobTitle;
     private WorkExperience workExperience;
     private Integer rate;
     private String ProjectDescription;
+    private LocalDateTime createdAt;
+    private LocalDateTime updateAt;
 
     public OfferForm() {
     }
@@ -29,17 +30,17 @@ public class OfferForm {
         ProjectDescription = projectDescription;
     }
 
-    public OfferForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updateAt, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription) {
+    public OfferForm(String id, String name, String description, WorkType workType, String jobTitle, WorkExperience workExperience, Integer rate, String projectDescription, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
         this.workType = workType;
         this.jobTitle = jobTitle;
         this.workExperience = workExperience;
         this.rate = rate;
         ProjectDescription = projectDescription;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
     }
 
     public String getId() {
@@ -66,21 +67,6 @@ public class OfferForm {
         this.description = description;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
 
     public WorkType getWorkType() {
         return workType;
@@ -121,6 +107,22 @@ public class OfferForm {
     public void setProjectDescription(String projectDescription) {
         ProjectDescription = projectDescription;
     }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
+
 
     @Override
     public String toString() {
@@ -128,13 +130,13 @@ public class OfferForm {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updateAt +
                 ", workType=" + workType +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", workExperience=" + workExperience +
                 ", rate=" + rate +
                 ", ProjectDescription='" + ProjectDescription + '\'' +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
                 '}';
     }
 }
